@@ -9,9 +9,10 @@ metadata:
     app: nginx    
 spec:
   # modify replicas according to your case
-  replicas: 3
+  replicas: 2
+    # These are the labels replica set use to create pod replicas, this should match pod labels
   selector:
-    matchLabels:
+   matchLabels:
     purpose: rs-demo
     project: roboshop
     app: nginx
