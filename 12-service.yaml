@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: nginx
   labels:
-  purpose: service-demo
+   purpose: service-demo
 spec:
   selector:
     purpose: service-demo
