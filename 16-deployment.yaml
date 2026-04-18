@@ -25,21 +25,5 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: nginx:stable-perl
        
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx-svc
-  labels:
-    purpose: service-demo
-spec:
-  selector:
-    purpose: deployement-demo
-    project: roboshop
-    app: nginx
-  ports:
-    - protocol: TCP
-      port: 80 # service port
-      targetPort: 80 # container port
