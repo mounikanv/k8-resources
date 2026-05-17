@@ -11,7 +11,7 @@ spec:
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
-    volumeHandle: vol-0ac7054352386c186
+    volumeHandle: vol-049d2f2dc765a7fee
 ---
 #pvc
 apiVersion: v1
