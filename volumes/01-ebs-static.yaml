@@ -72,5 +72,6 @@ ports:
 #Attach to EBSpolicy one node
 #install drivers
 #create pv pvc and pod service load balancer
-#browser check
+#check in browser
+#delete volumes after creation
 
