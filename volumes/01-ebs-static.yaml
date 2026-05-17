@@ -61,9 +61,9 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    purpose: ebs-static-demo
-    Project: roboshop
-ports:
+   purpose: ebs-static-demo
+   Project: roboshop
+  ports:
     - protocol: TCP
       port: 80 # service port
       targetPort: 80 # container port
