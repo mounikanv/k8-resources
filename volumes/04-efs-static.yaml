@@ -14,8 +14,9 @@ spec:
   csi:
     driver: efs.csi.aws.com
     volumeHandle: fs-03aae9dabeee3239e
-#pvc    
+    
 ---
+#pvc
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -46,7 +47,7 @@ spec:
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
-      claimName: efs-static
+      claimName: efs-static-pvc  #pvc name
 #service      
 ---
 apiVersion: v1
