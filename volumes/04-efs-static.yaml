@@ -1,0 +1,17 @@
+# PV
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: efs-staticpv #pv name
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: "" # This should be empty in static provisioning
+  persistentVolumeReclaimPolicy: Retain
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: fs-03aae9dabeee3239e
+
