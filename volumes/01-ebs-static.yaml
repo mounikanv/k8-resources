@@ -1,3 +1,4 @@
+# PV
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -12,6 +13,7 @@ spec:
     fsType: ext4
     volumeHandle: vol-0a1fa2319ea6f2e03
 ---
+#pvc
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -25,6 +27,7 @@ spec:
     requests:
       storage: 5Gi  
 ---
+#POD
 apiVersion: v1
 kind: Pod
 metadata:
@@ -47,6 +50,27 @@ spec:
     persistentVolumeClaim:
       claimName: ebs-static-pvc #clime name is pvc name
 ---
+#SVC
+apiVersion: v1
+kind: Service
+metadata:
+  name: ebs-static-service
+  labels:
+    purpose: ebs-static-demo
+    project: roboshop
+spec:
+  type: LoadBalancer
+  selector:
+    purpose: ebs-static-demo
+    Project: roboshop
+ports:
+    - protocol: TCP
+      port: 80 # service port
+      targetPort: 80 # container port
 
-
+#create volumes in kuberentes
+#Attach to EBSpolicy one node
+#install drivers
+#create pv pvc and pod service load balancer
+#browser check
 
