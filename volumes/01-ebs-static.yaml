@@ -73,5 +73,5 @@ spec:
 #install drivers
 #create pv pvc and pod service load balancer
 #check in browser
-#delete volumes after creation
+#once done delete all volumes
 
