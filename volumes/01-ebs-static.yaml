@@ -10,7 +10,7 @@ spec:
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
-    volumeHandle: vol-0ca7767af183ae93b
+    volumeHandle: vol-0a1fa2319ea6f2e03
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -24,4 +24,27 @@ spec:
   resources:
     requests:
       storage: 5Gi  
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  purpose: ebs-static-demo
+  project: roboshop
+spec:
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1c  
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: persistent-storage
+      mountPath: /user/share/nginx/html
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: ebs-static-pvc #clime name is pvc name
+---
+
 
